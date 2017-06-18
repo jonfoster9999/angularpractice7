@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+      <a [routerLink]="['/cool']"
+         [queryParams]="{sup: 'one'}"
+         >One</a>
+      <a [routerLink]="['/cool']"
+         [queryParams]="{sup: 'two'}"
+         >Two</a>
+      <a cursor (click)="goToNice()">Nice</a>
+      <input type="text" [(ngModel)]="selectedUser">
+      <ul>
+        <li *ngFor="let user of users | filter:selectedUser">{{user}}</li>
+      </ul>
+      <router-outlet></router-outlet>
+  </div>
+</div>
